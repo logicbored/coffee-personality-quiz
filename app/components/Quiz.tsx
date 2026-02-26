@@ -145,7 +145,7 @@ export default function Quiz() {
         </p>
         <button
           onClick={() => setScreen("quiz")}
-          className="bg-gradient-to-r from-[#FF6B9D] to-[#FFB347] text-white font-extrabold text-lg px-10 py-4 rounded-full shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+          className="bg-gradient-to-r from-[#FF6B9D] to-[#FFB347] text-white font-extrabold text-2xl px-14 py-5 rounded-full shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
         >
           Start the Quiz →
         </button>
