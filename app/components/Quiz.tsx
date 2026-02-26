@@ -135,7 +135,7 @@ export default function Quiz() {
 
   if (screen === "intro") {
     return (
-      <div className="bg-white rounded-[16px] shadow-xl w-full max-w-[560px] p-10 text-center">
+      <div className="bg-white rounded-[16px] shadow-2xl w-full max-w-[560px] p-10 text-center">
         <div className="text-6xl mb-4">☕</div>
         <h1 className="text-3xl font-extrabold text-[#2D2D2D] mb-3 leading-tight">
           What's Your Coffee Personality?
@@ -158,7 +158,7 @@ export default function Quiz() {
     const progress = ((current) / questions.length) * 100;
 
     return (
-      <div className="bg-white rounded-[16px] shadow-xl w-full max-w-[560px] p-8">
+      <div className="bg-white rounded-[16px] shadow-2xl w-full max-w-[560px] p-8">
         {/* Progress */}
         <div className="mb-6">
           <div className="flex justify-between text-sm font-bold text-[#2D2D2D]/50 mb-2">
@@ -211,7 +211,7 @@ export default function Quiz() {
   const top = sortedResults[0];
 
   return (
-    <div className="bg-white rounded-[16px] shadow-xl w-full max-w-[560px] p-8">
+    <div className="bg-white rounded-[16px] shadow-2xl w-full max-w-[560px] p-8">
       <h2 className="text-2xl font-extrabold text-[#2D2D2D] text-center mb-1">Your Results</h2>
       <p className="text-center text-[#2D2D2D]/60 text-sm mb-6">Your coffee personality breakdown</p>
 
