@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background: linear-gradient(135deg, #0D9488 0%, #F97316 100%);
+  background: linear-gradient(180deg, #0D9488 0%, #F97316 100%);
   min-height: 100vh;
   font-family: var(--font-nunito), 'Nunito', sans-serif;
   color: #2D2D2D;
