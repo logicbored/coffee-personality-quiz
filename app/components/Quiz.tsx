@@ -107,6 +107,7 @@ export default function Quiz() {
   const [current, setCurrent] = useState(0);
   const [scores, setScores] = useState<Record<string, number>>({});
   const [selected, setSelected] = useState<PersonalityId | null>(null);
+  const [copied, setCopied] = useState(false);
 
   function handleAnswer(personality: PersonalityId) {
     setSelected(personality);
@@ -206,8 +207,6 @@ export default function Quiz() {
       </div>
     );
   }
-
-  const [copied, setCopied] = useState(false);
 
   function handleShare() {
     const top = sortedResults[0];
