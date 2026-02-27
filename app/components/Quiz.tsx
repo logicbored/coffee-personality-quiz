@@ -207,6 +207,22 @@ export default function Quiz() {
     );
   }
 
+  const [copied, setCopied] = useState(false);
+
+  function handleShare() {
+    const top = sortedResults[0];
+    const text = `I'm a ${top.name} — my coffee match is ${top.coffee}! ☕ Take the quiz:`;
+    const url = "https://quiz.apricotsolutions.io";
+    if (navigator.share) {
+      navigator.share({ title: "My Coffee Personality", text, url });
+    } else {
+      navigator.clipboard.writeText(`${text} ${url}`).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    }
+  }
+
   // Results screen
   const top = sortedResults[0];
 
@@ -267,12 +283,20 @@ export default function Quiz() {
         })}
       </div>
 
-      <button
-        onClick={restart}
-        className="mt-6 w-full bg-gradient-to-r from-[#FF6B9D] to-[#FFB347] text-white font-extrabold text-base px-8 py-3 rounded-full shadow hover:opacity-90 transition-opacity cursor-pointer"
-      >
-        Retake Quiz
-      </button>
+      <div className="mt-6 flex gap-3">
+        <button
+          onClick={restart}
+          className="flex-1 bg-gradient-to-r from-[#FF6B9D] to-[#FFB347] text-white font-extrabold text-base px-8 py-3 rounded-full shadow hover:opacity-90 transition-opacity cursor-pointer"
+        >
+          Retake Quiz
+        </button>
+        <button
+          onClick={handleShare}
+          className="flex-1 border-2 border-[#FF6B9D] text-[#FF6B9D] font-extrabold text-base px-8 py-3 rounded-full hover:bg-[#FF6B9D]/10 transition-colors cursor-pointer"
+        >
+          {copied ? "Copied! ✓" : "Share ↗"}
+        </button>
+      </div>
     </div>
   );
 }
